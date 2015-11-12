@@ -1,0 +1,106 @@
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!-- Your app title -->
+  <title>Application Title</title>
+
+  <!-- Framework7 iOS theme styles -->
+  <link rel="stylesheet" href="/packages/nobutakaoshiro_framework7-ios-material/framework7/dist/css/framework7.ios.min.css">
+  <link rel="stylesheet" href="/packages/nobutakaoshiro_framework7-ios-material/framework7/dist/css/framework7.ios.colors.min.css">
+
+  <!-- Material(Android) theme styles -->
+  <!-- <link rel="stylesheet" href="/packages/nobutakaoshiro_framework7-ios-material/framework7/dist/css/framework7.material.min.css">
+  <link rel="stylesheet" href="/packages/nobutakaoshiro_framework7-ios-material/framework7/dist/css/framework7.material.colors.min.css"> -->
+</head>
+
+<body>
+  
+</body>
+
+<template name="layout">
+  <!-- Status bar overlay for full screen mode (PhoneGap) -->
+  <div class="statusbar-overlay"></div>
+  <!-- Panels overlay-->
+  <div class="panel-overlay"></div>
+  <!-- Left panel with reveal effect-->
+  <div class="panel panel-left panel-reveal">
+    <div class="content-block">
+      <p>Left panel content goes here</p>
+    </div>
+  </div>
+  <!-- Views -->
+  <div class="views">
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main">
+      <!-- Top Navbar-->
+      {{> Template.dynamic template=main}}
+    </div>
+  </div>
+</template>
+
+<template name="index">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+      <div class="center sliding">Awesome App</div>
+      <div class="right">
+        <!-- 
+          Right link contains only icon - additional "icon-only" class
+          Additional "open-panel" class tells app to open panel when we click on this link
+        -->
+        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+      </div>
+    </div>
+  </div>
+  <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+  <div class="pages navbar-through toolbar-through">
+    <!-- Page, "data-page" contains page name -->
+    <div data-page="index" class="page">
+      <!-- Scrollable page content -->
+      <div class="page-content">
+        <p>Page content goes here</p>
+        <!-- Link to another page -->
+        <a href="#" class="about">About app</a>
+      </div>
+    </div>
+  </div>
+  <!-- Bottom Toolbar-->
+  <div class="toolbar">
+    <div class="toolbar-inner">
+      <!-- Toolbar links -->
+      <a href="#" class="link">Link 1</a>
+      <a href="#" class="link">Link 2</a>
+    </div>
+  </div>
+</template>
+
+<template name="about">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="left">
+        <a href="#" class="back link">
+          <i class="icon icon-back"></i>
+          <span>Back</span>
+         </a>
+      </div>
+      <div class="center sliding">About</div>
+      <div class="right">
+        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="pages">
+    <div data-page="about" class="page">
+      <div class="page-content">
+        <div class="content-block">
+          <p>Here is About page!</p>
+          <p>Fusce eros lectus, accumsan eget mi vel, iaculis tincidunt felis. Nulla tincidunt pharetra sagittis. Fusce in felis eros. Nulla sit amet aliquam lorem, et gravida ipsum. Mauris consectetur nisl non sollicitudin tristique. Praesent vitae metus ac quam rhoncus mattis vel et nisi. Aenean aliquet, felis quis dignissim iaculis, lectus quam tincidunt ligula, et venenatis turpis risus sed lorem. Morbi eu metus elit. Ut vel diam dolor.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
